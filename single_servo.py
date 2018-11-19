@@ -6,6 +6,7 @@ from shared_constants import *
 
 DXL_ID                      = 0  # Set this to the ID of the servo that we are controlling
 
+
 def main():
     portHandler = PortHandler(DEVICENAME)
 
@@ -31,6 +32,7 @@ def main():
     if not enable_torque(packetHandler, portHandler, DXL_ID):
         quit()
 
+    # Declare the goal positions
     goal_positions = [DXL_MINIMUM_POSITION_VALUE, DXL_MAXIMUM_POSITION_VALUE]
     index = 0
     while True:
@@ -39,9 +41,8 @@ def main():
             break
 
         goal_pos = goal_positions[index]
-        # Write goal position
+        # Write goal position to the servo
         write_goal(packetHandler, portHandler, DXL_ID, goal_pos)
-
 
         # Execute until error within threshold
         while True:
@@ -53,12 +54,13 @@ def main():
             if abs(goal_pos - dxl_present_position) < DXL_MOVING_STATUS_THRESHOLD:
                 break
 
-        index = 1 - index # Toggle index between 1 and 0
+        index = 1 - index  # Toggle index between 1 and 0
 
     disable_torque(packetHandler, portHandler, DXL_ID)
 
     # close port
     portHandler.closePort()
+
 
 if __name__ == "__main__":
     main()
