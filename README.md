@@ -7,18 +7,19 @@
 * Power Adapter: 12V~18.5V (Recommended: 14.8V)
 
 ## Requirements
-1. [Dynamixel SDK][SDK Link] needs to be installed before usage.
-* Create a python virtual environment: `virtualenv venv --python=python3`
-* Activate the virtual env: `source venv/bin/activate`
-* Git clone the above SDK github repo in some location
-* `cd` into its `python` directory
-* `python setup.py install`
+* [Dynamixel SDK][SDK Link] needs to be installed before usage.
+    * Create a python virtual environment: `virtualenv venv --python=python3`
+    * Activate the virtual env: `source venv/bin/activate`
+    * Git clone the above SDK github repo in some location
+    * `cd` into its `python` directory
+    * `python setup.py install`
 
-2. Dynamixel servos need to have their IDs set
-* Download Dynamixel's [RoboPlus 1.0][RoboPlus Link] (didn't try 2.0, might also work)
-* Set the IDs of the servos using its Dynamixel Wizard tool
+* Dynamixel servos need to have their IDs set
+    * Download Dynamixel's [RoboPlus 1.0][RoboPlus Link] (didn't try 2.0, might also work)
+    * Set the IDs of the servos using its Dynamixel Wizard tool
 
 ## Run the demo
+### Steps:
 1. Connect the **servos** to **Power Hub** (either daisy-chained or separate)
 2. Connect **USB2Dynamixel** one end to **Power Hub**, and another end to a computer's **USB Port**
 3. Connect the **Power Adapter** to **Power Hub**
