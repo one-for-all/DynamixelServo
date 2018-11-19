@@ -119,5 +119,8 @@ def main():
     elif dxl_error != 0:
         print("%s" % packetHandler.getRxPacketError(dxl_error))
 
+    # close port
+    portHandler.closePort()
+
 if __name__ == "__main__":
     main()
