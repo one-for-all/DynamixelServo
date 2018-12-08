@@ -1,5 +1,4 @@
-# This Demo Turns a Single Servo back and forth between
-# 0 and 300 Degrees (max range for DX 117)
+# This script finds the ID of the single Dynamixel Servo connected
 from helper import (getch, enable_torque, write_goal, read_pos, disable_torque)
 from dynamixel_sdk import *
 from shared_constants import *
